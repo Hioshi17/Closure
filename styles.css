@@ -1,0 +1,139 @@
+/* Общие стили */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu-container {
+  width: 350px;
+  background-color: #34495e;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  border-bottom: 1px solid #3b4a60;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+a,
+span {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: #ecf0f1;
+  background: #34495e;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+span:hover {
+  background: #3b4a60;
+  color: #f5c518;
+}
+
+/* Разделение подменю */
+.submenu {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+    transform 0.4s ease-in-out;
+  background: #2c3e50;
+}
+
+li.submenu-open > .submenu {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Иконки */
+li.has-submenu > span::after {
+  content: "►";
+  float: right;
+  font-size: 1.2em;
+  color: #f5c518;
+  transition: transform 0.3s ease;
+}
+
+li.submenu-open > span::after {
+  transform: rotate(90deg);
+}
+
+/* Анимации */
+.submenu a,
+.submenu span {
+  padding-left: 40px;
+}
+
+.submenu a:hover {
+  color: #ffd700;
+  background: #444;
+}
+
+/* Эффекты при наведении */
+li:hover {
+  background-color: #3b4a60;
+}
+
+.menu-container a,
+.menu-container span {
+  font-size: 1.1em;
+}
+
+li.has-submenu > span {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #f5c518;
+  text-transform: uppercase;
+}
+
+li.has-submenu > span:hover {
+  background: #3b4a60;
+  color: #ffd700;
+}
+
+/* Стиль меню */
+.menu-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 360px;
+}
+
+/* Дополнительные стили для улучшения контраста */
+a:focus,
+span:focus {
+  outline: none;
+  background-color: #3b4a60;
+  color: #ffd700;
+}
+
+li:hover a,
+li:hover span {
+  padding-left: 25px;
+}
